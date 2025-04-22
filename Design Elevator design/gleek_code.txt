@@ -1,0 +1,54 @@
+ElevatorSystem
+	- elevators: List<Elevator>
+	+ handle_request(req: Request)
+	+ press_inside_button(id, floor)
+	+ shutdown()
+
+
+Elevator
+	- id: int
+	- current_floor: int
+	- target_floors: List[int] 
+	- state: ElevatorState
+	- direction: Direction   
+	- lock: threading.Lock
+	- running: bool
+	+add_target(floor)
+	+run() (from Thread)
+	+stop()
+	
+ Door
+	- open: bool
+	+ open_door()
+	+ close_door()
+
+ElevatorButton
+	- floor: int
+	- elevator: Elevator
+	+ press()
+
+
+FloorButton
+	- floor: int
+	- direction: Direction
+	+press(system)
+
+Request
+	- floor: int
+	- direction: Direction (optional)
+
+Direction
+	+ UP, DOWN, IDLE
+
+ElevatorState
+	+ MOVING, STOPPED, IDLE
+
+ElevatorSystem-uses->Elevator
+
+ElevatorSystem --ElevatorButton
+
+FloorButton -- Request
+
+ElevatorSystem--Request
+
+Elevator-->Door
