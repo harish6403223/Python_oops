@@ -63,14 +63,14 @@ class Parking:
             if vehicle_type == Vehicle_Type.Bike:
                 free_slot = parkinglot.Bike_floors.check_free_slot()
                 if free_slot:
-                    print(f"Assigned parking_lot {parkinglot.name} in Bike floor, parking no. {free_slot}")
+                    print(f"Assigned parking_lot name {parkinglot.name} in Bike floor, parking no. {free_slot}")
                     return [parkinglot.Bike_floors, free_slot]
                 else: 
                     print("No free slot found for bikes")
             elif vehicle_type == Vehicle_Type.Car:
                 free_slot = parkinglot.Car_floors.check_free_slot()
                 if free_slot:
-                    print(f"Assigned parking_lot {parkinglot.name} in Car floor, parking no. {free_slot}")
+                    print(f"Assigned parking_lot name {parkinglot.name} in Car floor, parking no. {free_slot}")
                     return [parkinglot.Car_floors, free_slot]
                 else: 
                     print("No free slot found for cars")

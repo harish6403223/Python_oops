@@ -35,6 +35,7 @@ if __name__ == "__main__":
     gate2.check_in("TS3", Bike)
 
     gate2.check_out("TS1")
+    gate2.check_out("TS1.1")
 
     gate2.check_in("TS4", Bike)
 

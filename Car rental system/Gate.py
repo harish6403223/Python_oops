@@ -56,7 +56,7 @@ class Gate:
             print(f"Vehicle type {vehicle_type} got error while checking in at {s.name}  at {s.name}")
             return
         if s.gatesystem.check_and_occupy(s.seq, vehicle):
-            print(f"Successfully completed check in for vehicle {name_plate}  at {s.name}")
+            print(f"Successfully completed check in for vehicle {name_plate}, vehicle type {vehicle.vehicle_type} at {s.name}")
         else:
             print(f"Failed to  check in for vehicle {name_plate}  at {s.name}")
 
