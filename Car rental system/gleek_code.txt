@@ -1,39 +1,35 @@
 Vehicle
 	- namplate
+	- vehicle_type
 	- time
-	- parkinglot
 	- floor
 	- parking_no
 	+ assign_details()
-	+ assignparkinglot()
 	+ calculate_cost()
 
 Bike
 	- vehicle_cost
 	+ assign_details()
-	+ assignparkinglot()
 	+ calculate_cost()
 
 Car
 	- vehivle_cost: int
 	+ assign_details()
-	+ assignparkinglot()
 	+ calculate_cost()
 
 Vehicle{1}-.->{*}Bike
 Vehicle{1}-.->{*}Car
 
 GateSystem
-	- parkinglot
+	- parking: parking
 	- Thread.lock
-	- id: int
-	- Vehicle_dict: dict(nameplate, vehicle)
-	- check_and_occupy()
-	- release()
+	- Vehicle_dict: dict
+	+ check_and_occupy()
+	+ release_parking()
 
 Gate
-	- id: int
-	- sequence: list(string)
+	- name: string
+	- sequence: list- string
 	- GateSystem
 	+ add_seq()
 	+ remove_seq()
@@ -54,14 +50,18 @@ parking
 	+ remove_parkinglot()
 
 parkinglot
-	- id: int
-	- floors: list
+	- name: string
+	- Bike_floor: Floor
+	- Car_Floor: Floor
 	+ add_floor()
 	- remove_floor()
 
 floor
+	- id
 	- free_slots: set
-	- occupied: set
+	- occupied-slot: set
+	+ add_slot()
+	+ remove_slot()
 
 parking{1}-->{*}parkinglot
 parkinglot{1}-->{*}floor
