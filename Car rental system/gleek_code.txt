@@ -2,6 +2,8 @@ Vehicle
 	- namplate
 	- time
 	- parkinglot
+	- floor
+	- parking_no
 	+ assign_details()
 	+ assignparkinglot()
 	+ calculate_cost()
@@ -26,19 +28,19 @@ GateSystem
 	- Thread.lock
 	- id: int
 	- Vehicle_dict: dict(nameplate, vehicle)
-	- Gates:dict(string, Gate)
-	+ add_gates()
-	+ remove_gates()
-	+ check_in()
-	+ check_out()
+	- check_and_occupy()
+	- release()
 
 Gate
 	- id: int
 	- sequence: list(string)
+	- GateSystem
 	+ add_seq()
 	+ remove_seq()
+	+ check_in()
+	+ check_out()
 
-GateSystem-->Gate
+Gate-->GateSystem
 GateSystem-->Vehicle
 GateSystem-->parking
 
@@ -58,9 +60,8 @@ parkinglot
 	- remove_floor()
 
 floor
-	- coloumn
-	- row
-	- matrix
+	- free_slots: set
+	- occupied: set
 
 parking{1}-->{*}parkinglot
 parkinglot{1}-->{*}floor

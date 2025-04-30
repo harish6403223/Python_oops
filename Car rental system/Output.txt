@@ -1,0 +1,33 @@
+starting chcekin and checkout
+Free slots: {2, 3, 4, 5, 6, 7, 8, 9, 10}
+Occupied slots: {1}
+Assigned parking_lot parkinglot1 in Bike floor, parking no. 1
+Successfully completed check in for vehicle TS1  at Gate1
+Free slots: {3, 4, 5, 6, 7, 8, 9, 10}
+Occupied slots: {1, 2}
+Assigned parking_lot parkinglot1 in Bike floor, parking no. 2
+Successfully completed check in for vehicle TS1.1  at Gate1
+Free slots: {2, 3, 4, 5, 6, 7, 8, 9, 10}
+Occupied slots: {1}
+Assigned parking_lot parkinglot1 in Car floor, parking no. 1
+Successfully completed check in for vehicle TS2  at Gate1
+Free slots: {4, 5, 6, 7, 8, 9, 10}
+Occupied slots: {1, 2, 3}
+Assigned parking_lot parkinglot2 in Bike floor, parking no. 3
+Successfully completed check in for vehicle TS3  at Gate2
+Free slots: {1, 4, 5, 6, 7, 8, 9, 10}
+Occupied slots: {2, 3}
+Successfully completed check out for vehicle TS1 at Gate2 and total cost is 160 for time differnce 8
+Free slots: {4, 5, 6, 7, 8, 9, 10}
+Occupied slots: {1, 2, 3}
+Assigned parking_lot parkinglot2 in Bike floor, parking no. 1
+Successfully completed check in for vehicle TS4  at Gate2
+Free slots: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+Occupied slots: set()
+Successfully completed check out for vehicle TS2 at Gate1 and total cost is 240 for time differnce 6
+Free slots: {3, 4, 5, 6, 7, 8, 9, 10}
+Occupied slots: {1, 2}
+Successfully completed check out for vehicle TS3 at Gate1 and total cost is 80 for time differnce 4
+Free slots: {1, 3, 4, 5, 6, 7, 8, 9, 10}
+Occupied slots: {2}
+Successfully completed check out for vehicle TS4 at Gate1 and total cost is 40 for time differnce 2
