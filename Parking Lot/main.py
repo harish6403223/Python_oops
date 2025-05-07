@@ -11,37 +11,39 @@ if __name__ == "__main__":
     parking = Parking()
 
     parkinglot1 = ParkingLot("parkinglot1")
+    parkinglot1.print_details()
+    time.sleep(0.1)
     parkinglot2 = ParkingLot("parkinglot2")
+    parkinglot2.print_details()
 
     parking.add_parkinglot(1, parkinglot1)
     parking.add_parkinglot(2, parkinglot2)
 
     gatesystem = GateSystem(parking)
 
-    gate1 = Gate(gatesystem, "Gate1")
-    gate1.add_seq(1)
-    gate1.add_seq(2)
+    entry_gate = Entry_gate(gatesystem)
+    entry_gate.add_seq(1)
+    entry_gate.add_seq(2)
 
-    gate2 = Gate(gatesystem, "Gate2")
-    gate2.add_seq(2)
-    gate2.add_seq(1)
+    exit_gate = Exit_gate(gatesystem)
+
 
     print("starting chcekin and checkout")
 
-    gate1.check_in("TS1", Bike)
-    gate1.check_in("TS1.1", Bike)
-    gate1.check_in("TS2", Car)
+    ticket1 = entry_gate.check_in("TS1", Bike, "Gate1")
+    ticket2 = entry_gate.check_in("TS1.1", Bike, "Gate1", [2,1])
+    ticket3 = entry_gate.check_in("TS2", Car, "Gate2")
 
-    gate2.check_in("TS3", Bike)
+    ticket4 = entry_gate.check_in("TS3", Bike, "Gate1", [2])
 
-    gate2.check_out("TS1")
-    gate2.check_out("TS1.1")
+    exit_gate.check_out(ticket2)
+    exit_gate.check_out(ticket1)
 
-    gate2.check_in("TS4", Bike)
+    ticket5 = entry_gate.check_in("TS4", Bike, "Gate2")
 
-    gate1.check_out("TS2")
-    gate1.check_out("TS3")
-    gate1.check_out("TS4")
+    exit_gate.check_out(ticket5)
+    exit_gate.check_out(ticket3)
+    exit_gate.check_out(ticket4)
 
 
 

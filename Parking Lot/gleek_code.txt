@@ -2,20 +2,36 @@ Vehicle
 	- namplate
 	- vehicle_type
 	- time
+	- ticket_number
 	- floor
-	- parking_no
+	- parking_umber
+	- parking_lot
 	+ assign_details()
+	+ retrieve_parking_details()
+	+ retrieve_vehicle_details()
 	+ calculate_cost()
 
 Bike
 	- vehicle_cost
 	+ assign_details()
 	+ calculate_cost()
+	+ generate_ticket()
 
 Car
 	- vehivle_cost: int
 	+ assign_details()
 	+ calculate_cost()
+	+ generate_ticket()
+
+Ticket
+	- ticket_seq: static int
+	- ticket number: int
+	- namplate
+	- vehicle_type
+	- time
+	- floor
+	- parking_no
+	- parkinglot_name
 
 Vehicle{1}-.->{*}Bike
 Vehicle{1}-.->{*}Car
@@ -23,28 +39,31 @@ Vehicle{1}-.->{*}Car
 GateSystem
 	- parking: parking
 	- Thread.lock
-	- Vehicle_dict: dict
+	- vehicle_dict: dict<name_plate, Vehicle>
 	+ check_and_occupy()
 	+ release_parking()
 
-Gate
-	- name: string
+Entry_Gate
 	- sequence: list- string
 	- GateSystem
 	+ add_seq()
 	+ remove_seq()
-	+ check_in()
-	+ check_out()
+	+ check_in(seq)
 
-Gate-->GateSystem
+Exit_Gate
+	- GateSystem
+	+ check_out(ticket_no)
+
+Entry_Gate-->GateSystem
+Exit_Gate-->GateSystem
 GateSystem-->Vehicle
 GateSystem-->parking
 
 
 parking
-	- parkinglot: dict(string, parkinglot)
-	+ check_lot()
-	+ occupy_lot()
+	- parkinglot: dict<string, parkinglot>
+	+ check_lot(seq)
+	+ release_lot()
 	+ release_lot()
 	+ add_parkinglot()
 	+ remove_parkinglot()
@@ -53,15 +72,50 @@ parkinglot
 	- name: string
 	- Bike_floor: Floor
 	- Car_Floor: Floor
-	+ add_floor()
-	- remove_floor()
+	+ retieve_name()
+	+ get_floor_details()
 
 floor
-	- id
+	- id: int
 	- free_slots: set
-	- occupied-slot: set
-	+ add_slot()
-	+ remove_slot()
+	- occupied: dict<id, parking spot>
+	+ add_spot()
+	+ remove_spot()
+	+ generate_ticket()
+	+ check_free_slot()
+	+ verify_spot()
+	+ print_details()
 
+parking_spot
+	- name_plate
+	- vehicle_type
+	+ spot_details()
+
+floor{1}-->{*}Ticket
 parking{1}-->{*}parkinglot
 parkinglot{1}-->{*}floor
+floor{1}-->{*}parking_spot
+
+
+Payment_strategy
+	+ select_startegy(amount)
+
+Payment
+	- payment()
+
+Upi
+	- payment()
+
+Cash
+	- payment()
+
+Scanner
+	- payment()
+
+Payment_strategy-->Upi
+Payment_strategy-->Cash
+Payment_strategy-->Scanner
+Payment-.->Upi
+Payment-.->Cash
+Payment-.->Scanner
+GateSystem-->Payment_strategy

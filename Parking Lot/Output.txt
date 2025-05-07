@@ -1,37 +1,183 @@
-PS C:\Users\Harish\Desktop\Python_oops> & "D:/My Program Files/Anaconda/python.exe" "c:/Users/Harish/Desktop/Python_oops/Car rental system/main.py"
+PS C:\Users\Harish\Desktop\Python_oops> & "D:/My Program Files/Anaconda/python.exe" "c:/Users/Harish/Desktop/Python_oops/Parking Lot/main.py"
+Parking lot name: parkinglot1
+Free slots: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+Occupied slots: 
+
+Free slots: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+Occupied slots: 
+
+<Parking.Floor object at 0x000001B5F5419710> <Parking.Floor object at 0x000001B5F5419BE0>
+Parking lot name: parkinglot2
+Free slots: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+Occupied slots:
+
+Free slots: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+Occupied slots:
+
+<Parking.Floor object at 0x000001B5F5419C50> <Parking.Floor object at 0x000001B5F5419C88>
 starting chcekin and checkout
 Free slots: {2, 3, 4, 5, 6, 7, 8, 9, 10}
-Occupied slots: {1}
+Occupied slots:
+1
 Assigned parking_lot name parkinglot1 in Bike floor, parking no. 1
+
+
+Ticket Details:
+Ticket number: 0
+Name plate: TS1
+Vehicle type:  Vehicle_Type.Bike
+Parking no:  1
+Parkinglot name: parkinglot1
+Floor no:  <Parking.Floor object at 0x000001B5F5419710>
+Incoming time:  030051
+
 Successfully completed check in for vehicle TS1, vehicle type Vehicle_Type.Bike at Gate1
-Free slots: {3, 4, 5, 6, 7, 8, 9, 10}
-Occupied slots: {1, 2}
-Assigned parking_lot name parkinglot1 in Bike floor, parking no. 2
+Free slots: {2, 3, 4, 5, 6, 7, 8, 9, 10}
+Occupied slots:
+1
+Assigned parking_lot name parkinglot2 in Bike floor, parking no. 1
+
+
+Ticket Details:
+Ticket number: 1
+Name plate: TS1.1
+Vehicle type:  Vehicle_Type.Bike
+Parking no:  1
+Parkinglot name: parkinglot2
+Floor no:  <Parking.Floor object at 0x000001B5F5419C50>
+Incoming time:  030053
+
 Successfully completed check in for vehicle TS1.1, vehicle type Vehicle_Type.Bike at Gate1
 Free slots: {2, 3, 4, 5, 6, 7, 8, 9, 10}
-Occupied slots: {1}
+Occupied slots:
+1
 Assigned parking_lot name parkinglot1 in Car floor, parking no. 1
-Successfully completed check in for vehicle TS2, vehicle type Vehicle_Type.Car at Gate1
-Free slots: {4, 5, 6, 7, 8, 9, 10}
-Occupied slots: {1, 2, 3}
-Assigned parking_lot name parkinglot2 in Bike floor, parking no. 3
-Successfully completed check in for vehicle TS3, vehicle type Vehicle_Type.Bike at Gate2
-Free slots: {1, 4, 5, 6, 7, 8, 9, 10}
-Occupied slots: {2, 3}
-Successfully completed check out for vehicle TS1 at Gate2 and total cost is 160 for time differnce 8
-Free slots: {2, 1, 4, 5, 6, 7, 8, 9, 10}
-Occupied slots: {3}
-Successfully completed check out for vehicle TS1.1 at Gate2 and total cost is 120 for time differnce 6
-Free slots: {1, 4, 5, 6, 7, 8, 9, 10}
-Occupied slots: {2, 3}
+
+
+Ticket Details:
+Ticket number: 2
+Name plate: TS2
+Vehicle type:  Vehicle_Type.Car
+Parking no:  1
+Parkinglot name: parkinglot1
+Floor no:  <Parking.Floor object at 0x000001B5F5419BE0>
+Incoming time:  030055
+
+Successfully completed check in for vehicle TS2, vehicle type Vehicle_Type.Car at Gate2
+Free slots: {3, 4, 5, 6, 7, 8, 9, 10}
+Occupied slots:
+1 2
 Assigned parking_lot name parkinglot2 in Bike floor, parking no. 2
-Successfully completed check in for vehicle TS4, vehicle type Vehicle_Type.Bike at Gate2
+
+
+Ticket Details:
+Ticket number: 3
+Name plate: TS3
+Vehicle type:  Vehicle_Type.Bike
+Parking no:  2
+Parkinglot name: parkinglot2
+Floor no:  <Parking.Floor object at 0x000001B5F5419C50>
+Incoming time:  030057
+
+Successfully completed check in for vehicle TS3, vehicle type Vehicle_Type.Bike at Gate1
+
+
+Ticket Details:
+Ticket number: 1
+Name plate: TS1.1
+Vehicle type:  Vehicle_Type.Bike
+Parking no:  1
+Parkinglot name: parkinglot2
+Floor no:  <Parking.Floor object at 0x000001B5F5419C50>
+Incoming time:  030053
+
+Ticket has been verified removing slot 1 in floor 1
+Free slots: {1, 3, 4, 5, 6, 7, 8, 9, 10}
+Occupied slots:
+2
+Payment through UPI done rs. 120
+Successfully completed check out for vehicle TS1.1 at Exit_gate and total cost is 120 for time differnce 6
+
+
+Ticket Details:
+Ticket number: 0
+Name plate: TS1
+Vehicle type:  Vehicle_Type.Bike
+Parking no:  1
+Parkinglot name: parkinglot1
+Floor no:  <Parking.Floor object at 0x000001B5F5419710>
+Incoming time:  030051
+
+Ticket has been verified removing slot 1 in floor 1
 Free slots: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-Occupied slots: set()
-Successfully completed check out for vehicle TS2 at Gate1 and total cost is 240 for time differnce 6
-Free slots: {1, 4, 5, 6, 7, 8, 9, 10, 3}
-Occupied slots: {2}
-Successfully completed check out for vehicle TS3 at Gate1 and total cost is 80 for time differnce 4
-Free slots: {2, 1, 4, 5, 6, 7, 8, 9, 10, 3}
-Occupied slots: set()
-Successfully completed check out for vehicle TS4 at Gate1 and total cost is 40 for time differnce 2
+Occupied slots:
+
+Payment through UPI done rs. 160
+Successfully completed check out for vehicle TS1 at Exit_gate and total cost is 160 for time differnce 8
+Free slots: {2, 3, 4, 5, 6, 7, 8, 9, 10}
+Occupied slots:
+1
+Assigned parking_lot name parkinglot1 in Bike floor, parking no. 1
+
+
+Ticket Details:
+Ticket number: 4
+Name plate: TS4
+Vehicle type:  Vehicle_Type.Bike
+Parking no:  1
+Parkinglot name: parkinglot1
+Floor no:  <Parking.Floor object at 0x000001B5F5419710>
+Incoming time:  030059
+
+Successfully completed check in for vehicle TS4, vehicle type Vehicle_Type.Bike at Gate2
+
+
+Ticket Details:
+Ticket number: 4
+Name plate: TS4
+Vehicle type:  Vehicle_Type.Bike
+Parking no:  1
+Parkinglot name: parkinglot1
+Floor no:  <Parking.Floor object at 0x000001B5F5419710>
+Incoming time:  030059
+
+Ticket has been verified removing slot 1 in floor 1
+Free slots: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+Occupied slots:
+
+Payment through UPI done rs. 840
+Successfully completed check out for vehicle TS4 at Exit_gate and total cost is 840 for time differnce 42
+
+
+Ticket Details:
+Ticket number: 2
+Name plate: TS2
+Vehicle type:  Vehicle_Type.Car
+Parking no:  1
+Parkinglot name: parkinglot1
+Floor no:  <Parking.Floor object at 0x000001B5F5419BE0>
+Incoming time:  030055
+
+Ticket has been verified removing slot 1 in floor 2
+Free slots: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+Occupied slots:
+
+Payment through UPI done rs. 1840
+Successfully completed check out for vehicle TS2 at Exit_gate and total cost is 1840 for time differnce 46
+
+
+Ticket Details:
+Ticket number: 3
+Name plate: TS3
+Vehicle type:  Vehicle_Type.Bike
+Parking no:  2
+Parkinglot name: parkinglot2
+Floor no:  <Parking.Floor object at 0x000001B5F5419C50>
+Incoming time:  030057
+
+Ticket has been verified removing slot 2 in floor 1
+Free slots: {1, 3, 4, 5, 6, 7, 8, 9, 10, 2}
+Occupied slots:
+
+Payment through UPI done rs. 880
+Successfully completed check out for vehicle TS3 at Exit_gate and total cost is 880 for time differnce 44
