@@ -1,0 +1,93 @@
+Vehicle
+	- int vehicleID;
+	- int vehicleNumber;
+	- VehicleType vehicleType;
+	- String companyName;
+	- String modelName;
+	- int kmDriven;
+	- Date manufacturingDate;
+	- int average;
+	- int cc;
+	- int dailyRentalCost;
+	- int hourlyRentalCost;
+	- int noOfSeat;
+	- Status status;
+
+Bike
+
+Car
+
+Bike--<>Vehicle
+Car--<>Vehicle
+
+VehicleInventoryManagement
+	- vehicle list<<Vehicle>>
+	+ getVehicles()
+	+ setVehicles
+
+VehicleInventoryManagement--<*>Vehicle
+
+Store
+	- store id
+	+ VehicleInventoryManagement
+	+ Location
+	+ Requests <<List>>
+
+Store--<*>VehicleInventoryManagement
+
+Location
+	- String address;
+	- int pincode;
+	- String city;
+	- String state;
+	- String country;
+
+Store--<*>Location
+
+Reservartion
+	- int reservationId;
+	+ User user;
+	+ Vehicle vehicle;
+	+ Date bookingDate;
+	+ Date dateBookedFrom;
+	+ Date dateBookedTo;
+	+ Long fromTimeStamp;
+	+ Long toTimeStamp;
+	+ Location pickUpLocation;
+	+ Location dropLocation;
+	+ ReservationType reservationType;
+	+ ReservationStatus reservationStatus;
+	+ Location location;
+
+User
+	- int userId;
+	- int userName;
+	- int drivingLicense;
+
+Reservartion--<*>User
+Reservartion--<*>Vehicle
+
+VehicleRentalSystem
+	+ storeList <<LIST>>
+	+ userList  <<LIST>>
+
+VehicleRentalSystem--<*>User
+VehicleRentalSystem--<*>Store
+
+Bill
+	+ Reservation reservation;
+	- double totalBillAmount;
+	- boolean isBillPaid;
+
+Payment
+	+ Bill bill
+
+Bill--<*>Reservartion
+Payment--<*>Bill
+
+
+
+
+
+
+
